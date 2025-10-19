@@ -12,6 +12,7 @@ import {
   FiPlay,
 } from "react-icons/fi";
 
+
 import illustrationSrc from "../../../assets/images/howitwork.png"
 
 
