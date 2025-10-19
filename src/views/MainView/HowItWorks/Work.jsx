@@ -13,7 +13,7 @@ import {
 } from "react-icons/fi";
 
 import illustrationSrc from "../../../assets/images/howitwork.png"
-import EmergencyResources from "../Componenets/Responeses/responses";
+
 
 /* card data using react-icons */
 const cardData = [
@@ -304,7 +304,7 @@ export default function EmergencyResponseSliderWithReactIcons({
           </div>
         </div>
       </div>
-      <EmergencyResources/>
+  
     </section>
   );
 }
