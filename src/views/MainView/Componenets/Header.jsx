@@ -8,10 +8,11 @@ export default function Header() {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Feature", path: "/Feature" },
+    { name: "Feature", path: "/feature " },
     { name: "How It Work", path: "/work" },
     { name: "Design", path: "/Design" },
     { name: "Security", path: "/Security" },
+    { name: "FAQs", path: "/faq" },
   ];
 
   return (

@@ -68,7 +68,7 @@ export default function Footer() {
     <nav aria-label="Product links">
       <h3 className="font-semibold text-gray-900 mb-3 font-playfair">Product</h3>
       <ul className="space-y-2 text-sm text-gray-600">
-        <li><Link to="/features" className="hover:text-pinky-500">Features</Link></li>
+        <li><Link to="/feature" className="hover:text-pinky-500">Features</Link></li>
         <li><Link to="/how-it-works" className="hover:text-pinky-500">How It Works</Link></li>
         <li><Link to="/design" className="hover:text-pinky-500">Design</Link></li>
         <li><Link to="/security" className="hover:text-pinky-500">Security</Link></li>

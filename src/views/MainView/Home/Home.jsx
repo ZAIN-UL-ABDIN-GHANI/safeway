@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import safeFlyLottie from "../../../assets/jasons/business protection.json";
 
  import { FaHeartbeat, FaShieldAlt, FaUsers } from "react-icons/fa";
+import MobileFeatureHero from "../Componenets/Setup";
 export default function Home() {
   return (
     <main className="min-h-screen bg-cotton text-gray-800 font-body px-[2%]">
@@ -106,7 +107,7 @@ export default function Home() {
           </div>
         </motion.aside>
       </section>
-
+<MobileFeatureHero/>
       {/* FOOTER CTA */}
       <footer className="bg-pinky-100 py-10 px-[2%] text-center">
         <p className="text-pinky-800 font-heading text-lg sm:text-xl">

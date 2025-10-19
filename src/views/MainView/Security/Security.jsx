@@ -1,79 +1,188 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Lock,
+  ShieldCheck,
+  Database,
+  Zap,
+  CheckCircle,
+  Shield,
+} from "lucide-react";
 
-export default function Security() {
-  const features = [
+export default function PrivacyPage() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const container = {
+    show: { transition: { staggerChildren: 0.15 } },
+  };
+
+  const card = {
+    hidden: { opacity: 0, y: 15 },
+    show: { opacity: 1, y: 0 },
+  };
+
+  const topFeatures = [
     {
-      title: 'End-to-End Encryption',
-      desc: 'Every data transmission between SafeFly and your connected device is protected using AES-256 encryption to ensure total privacy.',
+      title: "End-to-End Encryption",
+      desc: "Military grade AES 256 encryption for all data transmission and storage",
+      icon: <Lock className="w-10 h-10 text-pinky-500 mx-auto" />,
     },
     {
-      title: 'Secure Cloud Storage',
-      desc: 'All personal data is anonymized and stored on ISO-certified secure cloud servers with zero unauthorized access.',
+      title: "Privacy-First Design",
+      desc: "GDPR compliant with user controlled data sharing and transparent policies",
+      icon: <ShieldCheck className="w-10 h-10 text-pinky-500 mx-auto" />,
     },
     {
-      title: 'Biometric Authentication',
-      desc: 'Your device can only be accessed through fingerprint or face authentication, ensuring that your safety data stays personal.',
+      title: "Secure Storage",
+      desc: "Encrypted local storage with secure cloud backup and redundancy",
+      icon: <Database className="w-10 h-10 text-pinky-500 mx-auto" />,
     },
     {
-      title: 'Emergency Access Control',
-      desc: 'Only verified contacts receive your live location or distress alerts, maintaining complete control over your safety circle.',
-    },
-    {
-      title: 'Tamper Detection',
-      desc: 'The band immediately locks and sends alerts if tampering or removal attempts are detected while active.',
-    },
-    {
-      title: 'Automatic Software Updates',
-      desc: 'Security patches and firmware updates are delivered seamlessly to keep your protection system always up to date.',
+      title: "Real-Time Processing",
+      desc: "Instant threat detection with sub-second response times",
+      icon: <Zap className="w-10 h-10 text-pinky-500 mx-auto" />,
     },
   ];
 
+  const certifications = [
+    { k: "GDPR Compliant", d: "Full compliance with EU data protection regulations" },
+    { k: "ISO 27001 Certified", d: "Information security management certification" },
+    { k: "SOC 2 Compliant", d: "Service organization control standards" },
+    { k: "HIPAA Ready", d: "Health information privacy standards" },
+  ];
+
+  const controls = [
+    "End-to-end encryption for all communications",
+    "Regular security audits and penetration testing",
+    "Transparent privacy policy and data usage",
+    "User-controlled data sharing preferences",
+    "Secure data centers with 24/7 monitoring",
+    "Right to data deletion and export",
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900 text-gray-900 dark:text-white">
-  
+    <main className="bg-gradient-to-b from-pinky-50 via-cotton to-white min-h-screen flex flex-col items-center py-16 px-6 font-body">
+      <section className="max-w-6xl w-full">
+        {/* Top Badge */}
+        <div className="flex justify-center">
+          <span className="px-4 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold shadow-sm">
+            Security & Privacy
+          </span>
+        </div>
 
-      <section id="security" className="max-w-6xl mx-auto px-6 py-20">
-        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl md:text-5xl font-extrabold text-center">
-          Security You Can Trust
-        </motion.h1>
-        <p className="mt-6 text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto">
-          SafeFly ensures that your data and safety signals remain private, protected, and under your control at every moment.
-        </p>
+        {/* Hero Section */}
+        <motion.div
+          className="text-center mt-6"
+          initial="hidden"
+          animate="show"
+          variants={fadeUp}
+        >
+          <h1 className="text-4xl md:text-5xl font-heading text-pinky-900">
+            Your Privacy is{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pinky-400 to-pinky-600 animate-gradient">
+              Our Priority
+            </span>
+          </h1>
+          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+            We use enterprise-grade security measures to ensure your data remains
+            private and protected at all times.
+          </p>
+        </motion.div>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((item, index) => (
+        {/* Top Feature Cards */}
+        <motion.div
+          className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          initial="hidden"
+          animate="show"
+          variants={container}
+        >
+          {topFeatures.map((f, i) => (
             <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="p-6 bg-white/60 dark:bg-white/5 rounded-xl shadow hover:shadow-lg transition-shadow"
+              key={i}
+              variants={card}
+              className="p-6 rounded-2xl bg-white border border-pinky-100 text-center shadow-sm hover:shadow-md transition-shadow"
             >
-              <h3 className="font-semibold text-lg text-indigo-600">{item.title}</h3>
-              <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
+              <div>{f.icon}</div>
+              <h3 className="text-lg font-semibold text-pinky-800 mt-3">
+                {f.title}
+              </h3>
+              <p className="text-sm text-gray-600 mt-2">{f.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-20 text-center">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-            <h2 className="text-2xl font-bold">Your Privacy, Our Priority</h2>
-            <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
-              SafeFly’s AI never shares or sells user data. All insights are processed locally whenever possible, ensuring maximum confidentiality.
-            </p>
-            <div className="mt-8 inline-block px-6 py-3 rounded-md bg-indigo-600 text-white shadow hover:bg-indigo-700 cursor-pointer">
-              Learn More About Our Policy
-            </div>
-          </motion.div>
-        </div>
+        {/* Your Data, Your Control */}
+        <motion.section
+          className="mt-20 bg-white/60 rounded-2xl p-8 shadow-sm backdrop-blur-sm"
+          initial="hidden"
+          animate="show"
+          variants={fadeUp}
+        >
+          <h2 className="text-center font-heading text-2xl md:text-3xl text-pinky-800">
+            Your Data, Your Control
+          </h2>
+          <p className="mt-2 text-gray-600 text-center max-w-2xl mx-auto">
+            We believe in complete transparency and giving you full control over your personal information.
+          </p>
+
+          {/* Controls Grid */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 text-sm">
+            {controls.map((item, idx) => (
+              <div key={idx} className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-500 mt-0.5" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Compliance Section */}
+        <motion.section
+          className="mt-20"
+          initial="hidden"
+          animate="show"
+          variants={fadeUp}
+        >
+          <h3 className="text-center font-heading text-2xl md:text-3xl text-pinky-800">
+            Industry Compliance & Certifications
+          </h3>
+          <p className="mt-2 text-sm text-gray-600 text-center">
+            Trusted by leading organizations and certified to the highest standards.
+          </p>
+
+          {/* Certifications */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {certifications.map((c, idx) => (
+              <motion.div
+                key={idx}
+                variants={card}
+                className="p-6 rounded-2xl bg-white border border-pinky-100 text-center shadow-sm hover:shadow-md transition"
+              >
+                <Shield className="w-10 h-10 text-pinky-500 mx-auto mb-3" />
+                <h4 className="text-pinky-800 font-semibold">{c.k}</h4>
+                <p className="text-gray-600 text-sm mt-2">{c.d}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Footer Tags */}
+          <div className="mt-10 flex flex-wrap justify-center gap-3 text-sm">
+            <span className="px-4 py-1 rounded-full bg-green-100 text-green-800 font-medium">
+              Enterprise Security
+            </span>
+            <span className="px-4 py-1 rounded-full bg-blue-100 text-blue-700 font-medium">
+              Zero-Knowledge Architecture
+            </span>
+            <span className="px-4 py-1 rounded-full bg-pinky-100 text-pinky-700 font-medium">
+              Regular Security Audits
+            </span>
+          </div>
+        </motion.section>
+
       </section>
-
-      <footer className="bg-white/5 dark:bg-black/90 border-t border-gray-200 dark:border-gray-800 py-10 mt-12">
-        <div className="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500">
-          © 2025 SafeFly Inc. All rights reserved — built for your protection.
-        </div>
-      </footer>
-    </div>
+    </main>
   );
 }
