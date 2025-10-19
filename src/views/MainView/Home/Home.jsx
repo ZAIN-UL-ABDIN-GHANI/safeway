@@ -5,7 +5,7 @@ import safeFlyLottie from "../../../assets/jasons/business protection.json";
 
  import { FaHeartbeat, FaShieldAlt, FaUsers } from "react-icons/fa";
 import MobileFeatureHero from "../Componenets/Setup";
-import EmergencyResources from "../Componenets/Responeses/Responses";
+import EmergencyResources from "../Componenets/Responeses/Response";
 export default function Home() {
   return (
     <main className="min-h-screen bg-cotton text-gray-800 font-body px-[2%]">
