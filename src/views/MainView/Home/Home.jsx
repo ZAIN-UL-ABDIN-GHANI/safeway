@@ -5,6 +5,7 @@ import safeFlyLottie from "../../../assets/jasons/business protection.json";
 
  import { FaHeartbeat, FaShieldAlt, FaUsers } from "react-icons/fa";
 import MobileFeatureHero from "../Componenets/Setup";
+import EmergencyResources from "../Componenets/Responeses/responses";
 export default function Home() {
   return (
     <main className="min-h-screen bg-cotton text-gray-800 font-body px-[2%]">
@@ -115,7 +116,9 @@ export default function Home() {
           <span className="font-extrabold text-pinky-600 px-[3%] sm:px-1">SafeFly</span> — your
           safety, your freedom.
         </p>
+
       </footer>
+      <EmergencyResources/>
     </main>
   );
 }
